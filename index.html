@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* БАЗОВІ НАЛАШТУВАННЯ */
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #007dbc;
+            font-family: 'Open Sans', -apple-system, system-ui, sans-serif;
+            color: #ffffff;
+            height: auto; 
+            overflow-x: hidden;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background-color: #007dbc;
+            box-sizing: border-box;
+        }
+
+        /* ХЕДЕР (ШАПКА) */
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+            gap: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header__title {
+            font-weight: 700;
+            font-size: clamp(14px, 2.5vw, 20px);
+            text-transform: uppercase;
+            text-align: center;
+            flex: 1;
+            line-height: 1.2;
+        }
+
+        .header__title a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .wfp-logo { height: 50px; width: auto; flex-shrink: 0; }
+        .mon-logo { height: 40px; width: auto; filter: brightness(0) invert(1); flex-shrink: 0; }
+
+        /* ІНФО-КОНТЕЙНЕР */
+        .info-container {
+            display: flex;
+            flex-direction: row; 
+            align-items: flex-start;
+            gap: 30px;
+            padding: 40px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .info-container__image {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .info-container__image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px; 
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .info-container__text {
+            flex: 1.2;
+            text-align: left;
+        }
+
+        .info-container__text p {
+            margin: 0 0 16px 0;
+            font-size: 1.05rem; 
+            line-height: 1.6;
+        }
+
+        /* ЖИРНИЙ ПЕРШИЙ АБЗАЦ */
+        .info-container__text p:first-child {
+            font-weight: bold;
+            font-size: 1.15rem;
+        }
+
+        /* КНОПКИ */
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px; 
+            margin-top: 30px;
+        }
+
+        .wfp-button {
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13px;
+            background-color: #ffffff;
+            color: #007DBC;
+            flex: 1;
+            min-width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .wfp-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 0.95;
+        }
+
+        .wfp-button svg { margin-right: 10px; fill: currentColor; flex-shrink: 0; }
+
+        /* АДАПТИВНІСТЬ ДЛЯ ТЕЛЕФОНІВ */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; /* Все в стовпчик для простору */
+                padding: 20px 15px;
+                gap: 20px;
+            }
+            .header__title { order: -1; font-size: 18px; width: 100%; }
+            
+            .info-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .info-container__image {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                width: 100%;
+            }
+            .wfp-button {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <div class="header">
+            <a href="https://www.wfp.org" target="_blank">
+                <img src="https://cdn.wfp.org/guides/ui/assets/v0.0.1/logos/standard/en/wfp-logo-standard-white-en.svg" alt="WFP" class="wfp-logo">
+            </a>
+
+            <div class="header__title">
+                <a href="https://sites.google.com/mon.gov.ua/home/головна-сторінка" target="_top">
+                    ПРОГРАМА ШКІЛЬНОГО ХАРЧУВАННЯ
+                </a>
+            </div>
+
+            <a href="https://mon.gov.ua" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Ministry_of_Education_and_Science_of_Ukraine_%28logo%29_uk.png" alt="MON" class="mon-logo">
+            </a> 
+        </div>
+
+       <div class="info-container">
+    <div class="info-container__image">
+        <img src="https://drive.google.com/thumbnail?sz=w1000&id=16EJTrPDnzLveJoCtgRlntFupaa_VBEDO" 
+             alt="WFP Ukraine">
+    </div>
+
+            <div class="info-container__text">
+                <p>Всесвітня продовольча програма ООН — це провідна гуманітарна організація, яка за підтримки міжнародних донорів сприяє забезпеченню дітей та вразливих груп населення якісним харчуванням у різних країнах світу.</p>
+                
+                <p>В Україні ВПП ООН у партнерстві з Міністерством освіти і науки України реалізує Програму шкільного харчування відповідно до Договору від 20 травня 2025 року, що передбачає надання фінансової підтримки МОН з боку ВПП ООН для сталого впровадження урядової ініціативи щодо забезпечення харчуванням учнів початкових класів.</p>
+                
+                <p>Програма впроваджується у 2025–2026 навчальному році у закладах загальної середньої освіти 8 прикордонних та прифронтових областей України (Дніпропетровська, Запорізька, Миколаївська, Одеська, Сумська, Харківська, Херсонська та Чернігівська області).</p>
+                
+                <p>Фінансування харчування учнів здійснюється за рахунок коштів, залучених ВПП ООН від міжнародних донорів, у розмірі 15,00 грн на одного учня на один навчальний день.</p>
+
+                <div class="button-container">
+                    <a href="forms.html" 
+   class="wfp-button" 
+   onclick="window.top.location.href='forms.html'; return false;">
+    <svg width="18" height="18" viewBox="0 0 24 24">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"></path>
+    </svg>
+    Опитування
+</a>
+                    <a href="https://drive.google.com/drive/folders/1uwM2nyBzA14SIzJZ1glUVM8zAf0RIQC8?usp=sharing" class="wfp-button" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"></path></svg>
+                        Записи нарад
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1sr9x2xVYV7fmCm_NBR-dtl50PSGy6UFC?usp=sharing" class="wfp-button" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+                        Шаблони звітів
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* =======================
+           ХЕДЕР
+        ======================= */
+        body {
+            font-family: 'Open Sans', -apple-system, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+        }
+
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: #007dbc;
+            color: white;
+            gap: 15px;
+        }
+
+        .header__title {
+            font-weight: 700;
+            font-size: clamp(16px, 2vw, 22px);
+            text-transform: uppercase;
+            text-align: center;
+            flex: 1;
+        }
+
+        .header__title a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .wfp-logo { height: 50px; width: auto; }
+        .mon-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
+
+        /* =======================
+           МЕНЮ
+        ======================= */
+        .menu-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .wfp-menu {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid #0a6eb4; /* Фірмовий синій ВПП */
+        }
+
+        .menu-title {
+            color: #0a6eb4;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            gap: 15px;
+        }
+
+        .wfp-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #0a6eb4;
+            color: white;
+            border: 1px solid #0a6eb4;
+        }
+
+        .btn-primary:hover { background-color: #085387; }
+
+        .btn-archive {
+            background-color: #f0f3f5;
+            color: #455a64;
+            border: 1px solid #cfd8dc;
+        }
+
+        .btn-archive:hover { background-color: #e1e8ed; }
+
+        .deadline {
+            font-size: 12px;
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 4px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-weight: 600;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .deadline.expired {
+            color: #757575;
+            background: #eeeeee;
+        }
+
+        .divider {
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #9e9e9e;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .divider:not(:empty)::before { margin-right: 15px; }
+        .divider:not(:empty)::after { margin-left: 15px; }
+
+        .archive-section .wfp-btn { opacity: 0.8; }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .header { flex-direction: column; align-items: center; gap: 10px; }
+            .header__title { font-size: 18px; }
+            .wfp-logo { height: 45px; }
+            .mon-logo { height: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ХЕДЕР -->
+    <div class="header">
+        <a href="https://www.wfp.org" target="_blank" rel="noopener">
+            <img src="https://cdn.wfp.org/guides/ui/assets/v0.0.1/logos/standard/en/wfp-logo-standard-white-en.svg" 
+                 alt="WFP" class="wfp-logo">
+        </a>
+
+        <div class="header__title">
+            <a href="https://mon.gov.ua" target="_blank" rel="noopener">
+                ПРОГРАМА ШКІЛЬНОГО ХАРЧУВАННЯ
+            </a>
+        </div>
+
+        <a href="https://mon.gov.ua" target="_blank" rel="noopener">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Ministry_of_Education_and_Science_of_Ukraine_%28logo%29_uk.png" 
+                 alt="MON" class="mon-logo">
+        </a>
+    </div>
+
+    <!-- МЕНЮ -->
+    <div class="menu-wrapper">
+        <div class="wfp-menu">
+            <div class="menu-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/>
+                </svg>
+                Моніторинг та опитування
+            </div>
+
+            <div class="menu-item">
+                <a href="https://script.google.com/macros/s/AKfycbza-chinnYL1KsXiUSxGmfezS_4_nurFmft-u5zdazjo6mwDXv3kxf3yyKihMYaM3M/exec" class="wfp-btn btn-primary">
+                    Опитування: Інформаційні матеріали
+                </a>
+                <div class="deadline">До 20.01.2026</div>
+            </div>
+
+            <div class="divider">Архів / Завершені</div>
+
+            <div class="archive-section">
+                <div class="menu-item">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGglEeP2N8FPzaYXL_yd8gErb9G4H-AB0YRvEBpyXj1LjuUg/viewform?usp=dialog" class="wfp-btn btn-archive">
+                        Надсилання постерів
+                    </a>
+                    <div class="deadline expired">Завершено</div>
+                </div>
+
+                <div class="menu-item">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfcsflsOsGt1akGa4I76lEphEdjqlminLPKDONiNmzkp3lrow/viewform?usp=dialog" class="wfp-btn btn-archive">
+                        Анкета школи учасника
+                    </a>
+                    <div class="deadline expired">Завершено</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
